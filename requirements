@@ -3,3 +3,4 @@ Flask
 pandas
 deepface
 tracker
+firebase-admin google-cloud-storage

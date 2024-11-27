@@ -1,0 +1,106 @@
+:root {
+  --scroll-bar-width: auto;
+  scrollbar-color: #a9a9a9 #0f0f0f; /* Color of the scrollbar thumb and track */
+  scrollbar-width: var(--scroll-bar-width);
+}
+
+::-ms-reveal {
+  filter: invert(100%);
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -8px;
+  background-color: #f1f1f1;
+  pointer-events: none;
+}
+
+.not-active {
+  position: relative;
+}
+
+.not-active:hover::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -8px;
+  background-color: #6c6a6a;
+  color: #9f9f9f;
+  pointer-events: none;
+  animation: slideBar 0.3s ease-out forwards;
+}
+
+@keyframes slideBar {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.time-card {
+  --radius-l: 0px;
+  --radius-r: 0px;
+}
+
+.time-card:hover {
+  border-top-left-radius: var(--radius-l);
+  border-bottom-left-radius: var(--radius-l);
+  border-top-right-radius: var(--radius-r);
+  border-bottom-right-radius: var(--radius-r);
+  transform: scale(1.1);
+  transition: all 0.2s ease-out;
+}
+
+.time-card:not(:hover) {
+  transform: scaleX(1) scaleY(1);
+  transition: all 0.2s ease-in;
+  transition-delay: 0.3s;
+}
+
+.modalBoxOpened {
+  transform: translateY(-20px); /* Di chuyển văn bản lên trên ban đầu */
+  opacity: 0; /* Ban đầu không nhìn thấy */
+  animation: fadeInDown 0.4s forwards; /* Thay đổi thời gian nếu cần */
+}
+.modalBoxClosed {
+  transform: translateY(0); /* Di chuyển văn bản lên trên ban đầu */
+  opacity: 1; /* Ban đầu không nhìn thấy */
+  animation: fadeInUp 0.4s forwards; /* Thay đổi thời gian nếu cần */
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

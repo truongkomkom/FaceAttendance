@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+    <!-- Liên kết đến style.css thông qua url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              black0f: "#0f0f0f",
+              whitef1: "#f1f1f1",
+              gray9f: "#9f9f9f",
+              redff0: "#FF0000",
+            },
+            spacing: {
+              "screen-h-minus-112": "calc(100vh - 112px)",
+              "screen-h-minus-56": "calc(100vh - 56px)",
+              "w-200%-plus-48":
+                "calc(100%/1.1 + (24px - (100% - 100%/1.1)/2) )",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-black0f text-whitef1 text-[16px] font-mono">
+    <div class="w-full max-w-[1300px] xl:mx-auto h-screen justify-between">
+      <div
+        class="fixed w-full h-[56px] flex justify-between items-center max-w-[1300px] px-[40px] xl:px-0"
+      >
+        <!-- LOGO -->
+        <div class="text-[40px] leading-[42px] font-bold">LOGO</div>
+        <!-- PATH -->
+        <div class="flex text-[22px] leading-[24px] font-bold gap-[12px]">
+          <a href="{{ url_for('main_page') }}" rel="noopener noreferrer" class="inline-block px-[12px]" id="home">Home</a>
+          <a href="{{ url_for('class_page') }}" rel="noopener noreferrer" class="px-[12px]" id="class">Class</a>
+          <a href="{{ url_for('index') }}">Login</a>
+        </div>
+      </div>
+      <div class="pt-[72px] w-full px-[40px] xl:px-0">
+        <div
+          class="min-h-screen-h-minus-112 rounded-[5px] flex gap-[40px] px-[24px] py-[12px] shadow-[0_0_10px_#f1f1f1]"
+        >
+          <div
+            class="basis-[22%] rounded-l-[5px] flex flex-col gap-[20px] items-center text-whitef1"
+          >
+            <h1 class="text-[28px] leading-[30px] font-bold">Thông tin</h1>
+            <div
+              id="avatar"
+              class="size-[160px] rounded-[50%] overflow-hidden bg-whitef1"
+            >
+              <img
+                src="{{ url_for('static', filename='asset/gv2.png') }}"
+                alt="Giảng viên Nguyễn Thị Liệu"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <span class="text-gray9f">Giảng viên:</span>
+              <span class="text-whitef1">Nguyễn Thị Liệu</span>
+            </div>
+          </div>
+          <div class="flex-1 rounded-r-[5px] flex flex-col gap-[24px]">
+            <h1 class="text-[28px] leading-[30px] font-bold text-center">
+              Danh sách lớp ngày:
+              <span id="currDate"></span>
+            </h1>
+            <div class="flex-1 flex items-center justify-center gap-[24px]">
+              <!-- Morning Section -->
+              <div class="flex-1 flex h-[400px]" id="mornContainer">
+                <div
+                  class="group size-full bg-center bg-no-repeat bg-cover rounded-[5px] time-card relative"
+                  style="background-image: url('{{ url_for('static', filename='asset/morning.jpg') }}')"
+                >
+                  <div
+                    class="group-hover:w-w-200%-plus-48 group-hover:border-whitef1 rounded-r-[5px]
+                     border-transparent border-r-[2px] border-y-[2px] w-0 h-[400px]
+                      bg-black0f absolute left-[100%] top-0 transition-all delay-[0.215s] p-[8px] flex flex-col gap-[12px]"
+                    id="mornList"
+                  ></div>
+                </div>
+              </div>
+              <!-- Afternoon Section -->
+              <div class="flex-1 flex h-[400px]" id="afterContainer">
+                <div
+                  class="group size-full bg-center bg-no-repeat bg-cover rounded-[5px] time-card relative"
+                  style="background-image: url('{{ url_for('static', filename='asset/afternoon.jpg') }}')"
+                >
+                  <div
+                    id="afterList"
+                    class="group-hover:w-w-200%-plus-48 group-hover:border-whitef1 rounded-r-[5px]
+                     border-transparent border-r-[2px] border-y-[2px] w-0 h-[400px] bg-black0f
+                     absolute left-[100%] top-0 transition-all delay-[0.215s] p-[8px] flex flex-col gap-[12px]"
+                  ></div>
+                </div>
+              </div>
+              <!-- Night Section -->
+              <div class="flex-1 flex h-[400px]" id="nightContainer">
+                <div
+                  class="group size-full bg-center bg-no-repeat bg-cover rounded-[5px] time-card relative"
+                  style="background-image: url('{{ url_for('static', filename='asset/night.jpg') }}')"
+                >
+                  <div
+                    id="nightList"
+                    class="group-hover:w-w-200%-plus-48 group-hover:border-whitef1 rounded-l-[5px]
+                    border-transparent border-l-[2px] border-y-[2px] w-0 h-[400px] bg-black0f absolute
+                    right-[100%] top-0 transition-all delay-[0.215s] p-[8px] flex flex-col gap-[12px]"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Liên kết script thông qua url_for -->
+  <script src="{{ url_for('static', filename='class-script.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>

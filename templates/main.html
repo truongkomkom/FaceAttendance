@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black0f: "#0f0f0f",
+            whitef1: "#f1f1f1",
+          },
+          spacing: {
+            "screen-h-minus-112": "calc(100vh - 112px)",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-black0f text-whitef1 text-[16px] font-mono">
+  <div class="w-full max-w-[1300px] mx-auto h-screen justify-between">
+    <div class="fixed w-full h-[56px] flex justify-between items-center max-w-[1300px]">
+      <!-- LOGO -->
+      <div class="text-[40px] leading-[42px] font-bold">LOGO</div>
+      <!-- PATH -->
+      <div class="flex text-[22px] leading-[24px] font-bold gap-[12px]">
+        <a href="{{ url_for('main_page') }}" rel="noopener noreferrer" class="inline-block px-[12px]" id="home">Home</a>
+        <a href="{{ url_for('class_page') }}" rel="noopener noreferrer" class="px-[12px]" id="class">Class</a>
+        <a href="{{ url_for('logout') }}">Login</a>
+
+      </div>
+    </div>
+    <div class="pt-[72px] flex gap-[24px]">
+      <div class="basis-[67.5%] min-h-screen-h-minus-56">
+        <div class="w-full pt-[56.25%] relative border-[2px] rounded-[5px] shadow-[8px_8px_#f1f1f1]">
+          <div class="absolute inset-0">
+            <img src="{{ url_for('video_feed') }}" alt="video" class="size-full object-contain" />
+          </div>
+        </div>
+      </div>
+      <div class="flex-1 h-screen-h-minus-112">
+        <div class="size-full border-[2px] rounded-[5px] p-[12px] flex flex-col shadow-[6px_6px #f1f1f1]">
+          <h1 class="text-[26px] leading-[28px] font-bold mb-[24px]">Danh sách đã điểm danh</h1>
+          <div class="flex-1 overflow-auto flex flex-col gap-[12px]" id="student-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBWTzzUlA2YkBq9lCpUHn1q_K6Z8TCvB7k",
+      authDomain: "faceattendacerealtime-1b299.firebaseapp.com",
+      databaseURL: "https://faceattendacerealtime-1b299-default-rtdb.firebaseio.com",
+      projectId: "faceattendacerealtime-1b299",
+      storageBucket: "faceattendacerealtime-1b299.appspot.com",
+      messagingSenderId: "760810463873",
+      appId: "1:760810463873:web:3bac3fdde876f4955de380",
+      measurementId: "G-NZDZ7Q4Y8P"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    // Function to get student image URL
+    async function getStudentImageUrl(mssv) {
+      const imagePath = `21DTHX/${mssv}/`;
+      const imageName = '1';
+
+      try {
+        const imageRef = ref(storage, `${imagePath}${imageName}.png`);
+        return await getDownloadURL(imageRef);
+      } catch {
+        try {
+          const imageRef = ref(storage, `${imagePath}${imageName}.jpg`);
+          return await getDownloadURL(imageRef);
+        } catch {
+          console.error('Image not found for student:', mssv);
+          return null;
+        }
+      }
+    }
+
+    // Function to create a student list item
+    async function createStudentItem(data) {
+      const item = document.createElement('div');
+      item.className = 'w-full flex items-center gap-4 p-4 border-2 rounded-lg bg-black0f';
+
+      const imageUrl = await getStudentImageUrl(data.mssv);
+
+      item.innerHTML = `
+        <div class="flex-shrink-0">
+          ${imageUrl ?
+            `<img src="${imageUrl}" alt="Student" class="w-16 h-16 rounded-full object-cover border-2" />` :
+            `<div class="w-16 h-16 rounded-full bg-gray-700 flex items-center justify-center border-2">
+              <span class="text-2xl">${data.name.charAt(0)}</span>
+            </div>`}
+        </div>
+        <div class="flex-grow">
+          <div class="font-bold text-lg">${data.mssv}</div>
+          <div class="text-gray-400">${data.name}</div>
+        </div>
+        <div class="text-sm text-gray-400">
+          ${data.time || new Date().toLocaleTimeString()} <!-- Hiển thị thời gian -->
+        </div>
+      `;
+      return item;
+    }
+
+    // Load students from Session Storage (including time)
+    function loadStudentsFromSession() {
+      const savedStudents = JSON.parse(sessionStorage.getItem('studentList')) || [];
+      const studentList = document.getElementById('student-list');
+      savedStudents.forEach(async (student) => {
+        const item = await createStudentItem(student);
+        if (item) studentList.appendChild(item);
+      });
+      return new Set(savedStudents.map((student) => student.mssv));
+    }
+
+    // Save student to Session Storage (including time)
+    function saveStudentToSession(student) {
+      const savedStudents = JSON.parse(sessionStorage.getItem('studentList')) || [];
+      const time = new Date().toLocaleTimeString();  // Get the current time for attendance
+      student.time = time;  // Add time to the student object
+      savedStudents.push(student);
+      sessionStorage.setItem('studentList', JSON.stringify(savedStudents));
+    }
+
+    // Keep track of displayed students
+    let displayedStudents = loadStudentsFromSession();
+
+    // Function to fetch and display student data
+    async function fetchInfoData() {
+      try {
+        const response = await fetch('/info_data');
+        const data = await response.json();
+
+        if (data && !displayedStudents.has(data.mssv)) {
+          const studentList = document.getElementById('student-list');
+          const item = await createStudentItem(data);
+
+          if (item) {
+            if (studentList.firstChild) {
+              studentList.insertBefore(item, studentList.firstChild);
+            } else {
+              studentList.appendChild(item);
+            }
+
+            // Update the set of displayed students
+            displayedStudents.add(data.mssv);
+
+            // Save to Session Storage with the current time
+            saveStudentToSession(data);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching info_data:', error);
+      }
+    }
+
+    // Start fetching data every 2 seconds
+    setInterval(fetchInfoData, 2000);
+    // Add this event listener to the login link
+document.querySelector('a[href="{{ url_for("logout") }}"]').addEventListener('click', function(event) {
+  // Clear the session storage
+  sessionStorage.removeItem('studentList');
+});
+  </script>
+</body>
+</html>
