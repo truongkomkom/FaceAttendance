@@ -3,17 +3,11 @@ from flask import Flask, render_template, session, Response, jsonify,request, re
 import pandas as pd
 from deepface import DeepFace
 from deep_sort_realtime.deepsort_tracker import DeepSort
-import firebase_admin
-from firebase_admin import credentials, storage
+
 import cv2
 import secrets
 
-cred = credentials.Certificate('private_key/faceattendacerealtime-1b299-firebase-adminsdk-rm4dk-4815594a23.json')
 
-firebase_admin.initialize_app(cred, {
-    'storageBucket': 'faceattendacerealtime-1b299.appspot.com'  # Tên bucket
-})
-bucket = storage.bucket()
 
 tracker = DeepSort(max_age=15, n_init=3, nms_max_overlap=1.0)
 
@@ -81,34 +75,25 @@ def gen_frames():
         try:
             # Xác minh khuôn mặt và nhận diện bbox
             mssv, name, bbox, confidence = verify(frame)
-
             if bbox is not None and name != "Unknown":
-                # blob = bucket.blob(f'21DTHX/{mssv}/2{''}')
-
                 # Lấy tọa độ bbox và chuẩn bị dữ liệu đầu vào cho tracker
                 bbox_tracker = list(map(int, [bbox['x'], bbox['y'], bbox['w'], bbox['h']]))
                 score = float(confidence)
                 detections.append((bbox_tracker, score, name))
-
                 # Cập nhật theo dõi đối tượng
                 tracked_objects = tracker.update_tracks(detections, frame=frame)
-
                 # Vẽ bounding box cho các đối tượng đã được theo dõi
                 for track in tracked_objects:
                     if track.is_confirmed() and track.time_since_update <= 1:
                         ltrb = track.to_ltrb()  # Bounding box format [left, top, right, bottom]
-
                         # Draw rectangle
                         cv2.rectangle(frame, (int(ltrb[0]), int(ltrb[1])), (int(ltrb[2]), int(ltrb[3])), (200, 100, 100 ), 2)
-
                         # Define text background color and position
                         (text_width, text_height), baseline = cv2.getTextSize(name, cv2.FONT_HERSHEY_SIMPLEX, 0.8, 2)
                         background_topleft = (int(ltrb[0]), int(ltrb[1]) - text_height - 10)
                         background_bottomright = (int(ltrb[0]) + text_width, int(ltrb[1]))
-
                         # Draw filled rectangle for background
                         cv2.rectangle(frame, background_topleft, background_bottomright, (255, 0, 0), -1)
-
                         # Draw text on top of the background
                         cv2.putText(frame, name, (int(ltrb[0]), int(ltrb[1]) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8,
                                     (255, 255, 255), 2)
@@ -159,7 +144,7 @@ def login():
         session['logged_in'] = True
         session['email'] = email
         session['active'] = True  # Thêm flag hoạt động
-        return redirect(url_for('main_page'))
+        return redirect(url_for('class_page'))
     else:
         flash('Invalid email or password! Please try again.', 'error')
         return redirect(url_for('index'))

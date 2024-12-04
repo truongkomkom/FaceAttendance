@@ -1,6 +1,6 @@
 opencv-python
 Flask
 pandas
-deepface
+deepface==0.0.93
 tracker
 firebase-admin google-cloud-storage
