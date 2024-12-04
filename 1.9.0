@@ -1,0 +1,195 @@
+Collecting tensorflow
+  Obtaining dependency information for tensorflow from https://files.pythonhosted.org/packages/fb/59/3eb58629e3749d9f4fc1e522487af369f9bd4c451f465d3054961fab6bf8/tensorflow-2.13.1-cp38-cp38-win_amd64.whl.metadata
+  Downloading tensorflow-2.13.1-cp38-cp38-win_amd64.whl.metadata (2.6 kB)
+INFO: pip is looking at multiple versions of tensorflow to determine which version is compatible with other requirements. This could take a while.
+  Obtaining dependency information for tensorflow from https://files.pythonhosted.org/packages/5b/6f/8b125d126d54061c0be610b135aaf2f8960f55c2e185ac32445e4a5012d5/tensorflow-2.13.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading tensorflow-2.13.0-cp38-cp38-win_amd64.whl.metadata (2.6 kB)
+Collecting tensorflow-intel==2.13.0 (from tensorflow)
+  Obtaining dependency information for tensorflow-intel==2.13.0 from https://files.pythonhosted.org/packages/38/ba/dd4d998a852451e98dc009ecb208bbb0eeb0c8252dc35b7c4e1050762b36/tensorflow_intel-2.13.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading tensorflow_intel-2.13.0-cp38-cp38-win_amd64.whl.metadata (4.1 kB)
+Collecting absl-py>=1.0.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for absl-py>=1.0.0 from https://files.pythonhosted.org/packages/a2/ad/e0d3c824784ff121c03cc031f944bc7e139a8f1870ffd2845cc2dd76f6c4/absl_py-2.1.0-py3-none-any.whl.metadata
+  Using cached absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting astunparse>=1.6.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for astunparse>=1.6.0 from https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl.metadata
+  Using cached astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting flatbuffers>=23.1.21 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for flatbuffers>=23.1.21 from https://files.pythonhosted.org/packages/41/f0/7e988a019bc54b2dbd0ad4182ef2d53488bb02e58694cd79d61369e85900/flatbuffers-24.3.25-py2.py3-none-any.whl.metadata
+  Using cached flatbuffers-24.3.25-py2.py3-none-any.whl.metadata (850 bytes)
+Collecting gast<=0.4.0,>=0.2.1 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for gast<=0.4.0,>=0.2.1 from https://files.pythonhosted.org/packages/b6/48/583c032b79ae5b3daa02225a675aeb673e58d2cb698e78510feceb11958c/gast-0.4.0-py3-none-any.whl.metadata
+  Downloading gast-0.4.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting google-pasta>=0.1.1 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for google-pasta>=0.1.1 from https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl.metadata
+  Using cached google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting h5py>=2.9.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for h5py>=2.9.0 from https://files.pythonhosted.org/packages/15/9a/b5456e1acc4abb382938d4a730600823bfe77a4bbfd29140ccbf01ba5596/h5py-3.11.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading h5py-3.11.0-cp38-cp38-win_amd64.whl.metadata (2.5 kB)
+Collecting libclang>=13.0.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for libclang>=13.0.0 from https://files.pythonhosted.org/packages/0b/2d/3f480b1e1d31eb3d6de5e3ef641954e5c67430d5ac93b7fa7e07589576c7/libclang-18.1.1-py2.py3-none-win_amd64.whl.metadata
+  Using cached libclang-18.1.1-py2.py3-none-win_amd64.whl.metadata (5.3 kB)
+Collecting numpy<=1.24.3,>=1.22 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for numpy<=1.24.3,>=1.22 from https://files.pythonhosted.org/packages/1a/62/af7e78a12207608b23e3b2e248fc823fbef75f17d5defc8a127c5661daca/numpy-1.24.3-cp38-cp38-win_amd64.whl.metadata
+  Downloading numpy-1.24.3-cp38-cp38-win_amd64.whl.metadata (5.6 kB)
+Collecting opt-einsum>=2.3.2 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for opt-einsum>=2.3.2 from https://files.pythonhosted.org/packages/23/cd/066e86230ae37ed0be70aae89aabf03ca8d9f39c8aea0dec8029455b5540/opt_einsum-3.4.0-py3-none-any.whl.metadata
+  Using cached opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting packaging (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for packaging from https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl.metadata
+  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.20.3 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.20.3 from https://files.pythonhosted.org/packages/54/06/af93d6e5987e67fa48f4133bb3927dd0539b875a845f9633f538afafde80/protobuf-4.25.5-cp38-cp38-win_amd64.whl.metadata
+  Downloading protobuf-4.25.5-cp38-cp38-win_amd64.whl.metadata (541 bytes)
+Requirement already satisfied: setuptools in c:\faceattendance\.venv\lib\site-packages (from tensorflow-intel==2.13.0->tensorflow) (68.2.0)
+Collecting six>=1.12.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for six>=1.12.0 from https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl.metadata
+  Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting termcolor>=1.1.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for termcolor>=1.1.0 from https://files.pythonhosted.org/packages/d9/5f/8c716e47b3a50cbd7c146f45881e11d9414def768b7cd9c5e6650ec2a80a/termcolor-2.4.0-py3-none-any.whl.metadata
+  Downloading termcolor-2.4.0-py3-none-any.whl.metadata (6.1 kB)
+Collecting typing-extensions<4.6.0,>=3.6.6 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for typing-extensions<4.6.0,>=3.6.6 from https://files.pythonhosted.org/packages/31/25/5abcd82372d3d4a3932e1fa8c3dbf9efac10cc7c0d16e78467460571b404/typing_extensions-4.5.0-py3-none-any.whl.metadata
+  Downloading typing_extensions-4.5.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting wrapt>=1.11.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for wrapt>=1.11.0 from https://files.pythonhosted.org/packages/67/71/b9ce92b7820e9bd8e2c727d806a2e4e8c9d2a3e839ffadde2d0e44d84c0b/wrapt-1.17.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading wrapt-1.17.0-cp38-cp38-win_amd64.whl.metadata (6.5 kB)
+Collecting grpcio<2.0,>=1.24.3 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for grpcio<2.0,>=1.24.3 from https://files.pythonhosted.org/packages/c9/ff/304b1d38600f9ce0a823a244fed6ba734bea3b5c2dc8c741f9474a07775e/grpcio-1.68.1-cp38-cp38-win_amd64.whl.metadata
+  Downloading grpcio-1.68.1-cp38-cp38-win_amd64.whl.metadata (4.0 kB)
+Collecting tensorboard<2.14,>=2.13 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for tensorboard<2.14,>=2.13 from https://files.pythonhosted.org/packages/67/f2/e8be5599634ff063fa2c59b7b51636815909d5140a26df9f02ce5d99b81a/tensorboard-2.13.0-py3-none-any.whl.metadata
+  Downloading tensorboard-2.13.0-py3-none-any.whl.metadata (1.8 kB)
+Collecting tensorflow-estimator<2.14,>=2.13.0 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for tensorflow-estimator<2.14,>=2.13.0 from https://files.pythonhosted.org/packages/72/5c/c318268d96791c6222ad7df1651bbd1b2409139afeb6f468c0f327177016/tensorflow_estimator-2.13.0-py2.py3-none-any.whl.metadata
+  Downloading tensorflow_estimator-2.13.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting keras<2.14,>=2.13.1 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for keras<2.14,>=2.13.1 from https://files.pythonhosted.org/packages/2e/f3/19da7511b45e80216cbbd9467137b2d28919c58ba1ccb971435cb631e470/keras-2.13.1-py3-none-any.whl.metadata
+  Downloading keras-2.13.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting tensorflow-io-gcs-filesystem>=0.23.1 (from tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for tensorflow-io-gcs-filesystem>=0.23.1 from https://files.pythonhosted.org/packages/11/58/84a283d653f7818f6044986e09ad0dafd73389a7a380cae470f29fdc14b9/tensorflow_io_gcs_filesystem-0.31.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading tensorflow_io_gcs_filesystem-0.31.0-cp38-cp38-win_amd64.whl.metadata (14 kB)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in c:\faceattendance\.venv\lib\site-packages (from astunparse>=1.6.0->tensorflow-intel==2.13.0->tensorflow) (0.41.2)
+Collecting google-auth<3,>=1.6.3 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for google-auth<3,>=1.6.3 from https://files.pythonhosted.org/packages/2d/9a/3d5087d27865c2f0431b942b5c4500b7d1b744dd3262fdc973a4c39d099e/google_auth-2.36.0-py2.py3-none-any.whl.metadata
+  Downloading google_auth-2.36.0-py2.py3-none-any.whl.metadata (4.7 kB)
+Collecting google-auth-oauthlib<1.1,>=0.5 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for google-auth-oauthlib<1.1,>=0.5 from https://files.pythonhosted.org/packages/4a/07/8d9a8186e6768b55dfffeb57c719bc03770cf8a970a074616ae6f9e26a57/google_auth_oauthlib-1.0.0-py2.py3-none-any.whl.metadata
+  Downloading google_auth_oauthlib-1.0.0-py2.py3-none-any.whl.metadata (2.7 kB)
+Collecting markdown>=2.6.8 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for markdown>=2.6.8 from https://files.pythonhosted.org/packages/3f/08/83871f3c50fc983b88547c196d11cf8c3340e37c32d2e9d6152abe2c61f7/Markdown-3.7-py3-none-any.whl.metadata
+  Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+Collecting requests<3,>=2.21.0 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for requests<3,>=2.21.0 from https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl.metadata
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for tensorboard-data-server<0.8.0,>=0.7.0 from https://files.pythonhosted.org/packages/7a/13/e503968fefabd4c6b2650af21e110aa8466fe21432cd7c43a84577a89438/tensorboard_data_server-0.7.2-py3-none-any.whl.metadata
+  Using cached tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for werkzeug>=1.0.1 from https://files.pythonhosted.org/packages/6c/69/05837f91dfe42109203ffa3e488214ff86a6d68b2ed6c167da6cdc42349b/werkzeug-3.0.6-py3-none-any.whl.metadata
+  Downloading werkzeug-3.0.6-py3-none-any.whl.metadata (3.7 kB)
+Collecting cachetools<6.0,>=2.0.0 (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for cachetools<6.0,>=2.0.0 from https://files.pythonhosted.org/packages/a4/07/14f8ad37f2d12a5ce41206c21820d8cb6561b728e51fad4530dff0552a67/cachetools-5.5.0-py3-none-any.whl.metadata
+  Downloading cachetools-5.5.0-py3-none-any.whl.metadata (5.3 kB)
+Collecting pyasn1-modules>=0.2.1 (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for pyasn1-modules>=0.2.1 from https://files.pythonhosted.org/packages/77/89/bc88a6711935ba795a679ea6ebee07e128050d6382eaa35a0a47c8032bdc/pyasn1_modules-0.4.1-py3-none-any.whl.metadata
+  Downloading pyasn1_modules-0.4.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting rsa<5,>=3.1.4 (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for rsa<5,>=3.1.4 from https://files.pythonhosted.org/packages/49/97/fa78e3d2f65c02c8e1268b9aba606569fe97f6c8f7c2d74394553347c145/rsa-4.9-py3-none-any.whl.metadata
+  Downloading rsa-4.9-py3-none-any.whl.metadata (4.2 kB)
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<1.1,>=0.5->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for requests-oauthlib>=0.7.0 from https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+Collecting importlib-metadata>=4.4 (from markdown>=2.6.8->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for importlib-metadata>=4.4 from https://files.pythonhosted.org/packages/a0/d9/a1e041c5e7caa9a05c925f4bdbdfb7f006d1f74996af53467bc394c97be7/importlib_metadata-8.5.0-py3-none-any.whl.metadata
+  Downloading importlib_metadata-8.5.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting charset-normalizer<4,>=2 (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for charset-normalizer<4,>=2 from https://files.pythonhosted.org/packages/09/c8/0e17270496a05839f8b500c1166e3261d1226e39b698a735805ec206967b/charset_normalizer-3.4.0-cp38-cp38-win_amd64.whl.metadata
+  Downloading charset_normalizer-3.4.0-cp38-cp38-win_amd64.whl.metadata (34 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for idna<4,>=2.5 from https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl.metadata
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for urllib3<3,>=1.21.1 from https://files.pythonhosted.org/packages/ce/d9/5f4c13cecde62396b0d3fe530a50ccea91e7dfc1ccf0e09c228841bb5ba8/urllib3-2.2.3-py3-none-any.whl.metadata
+  Downloading urllib3-2.2.3-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for certifi>=2017.4.17 from https://files.pythonhosted.org/packages/12/90/3c9ff0512038035f59d279fddeb79f5f1eccd8859f06d6163c58798b9487/certifi-2024.8.30-py3-none-any.whl.metadata
+  Downloading certifi-2024.8.30-py3-none-any.whl.metadata (2.2 kB)
+Collecting MarkupSafe>=2.1.1 (from werkzeug>=1.0.1->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for MarkupSafe>=2.1.1 from https://files.pythonhosted.org/packages/92/21/357205f03514a49b293e214ac39de01fadd0970a6e05e4bf1ddd0ffd0881/MarkupSafe-2.1.5-cp38-cp38-win_amd64.whl.metadata
+  Downloading MarkupSafe-2.1.5-cp38-cp38-win_amd64.whl.metadata (3.1 kB)
+Collecting zipp>=3.20 (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for zipp>=3.20 from https://files.pythonhosted.org/packages/62/8b/5ba542fa83c90e09eac972fc9baca7a88e7e7ca4b221a89251954019308b/zipp-3.20.2-py3-none-any.whl.metadata
+  Downloading zipp-3.20.2-py3-none-any.whl.metadata (3.7 kB)
+Collecting pyasn1<0.7.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for pyasn1<0.7.0,>=0.4.6 from https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl.metadata
+  Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<1.1,>=0.5->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow)
+  Obtaining dependency information for oauthlib>=3.0.0 from https://files.pythonhosted.org/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl.metadata
+  Downloading oauthlib-3.2.2-py3-none-any.whl.metadata (7.5 kB)
+Downloading tensorflow-2.13.0-cp38-cp38-win_amd64.whl (1.9 kB)
+Downloading tensorflow_intel-2.13.0-cp38-cp38-win_amd64.whl (276.5 MB)
+   ---------------------------------------- 276.5/276.5 MB 3.9 MB/s eta 0:00:00
+Using cached absl_py-2.1.0-py3-none-any.whl (133 kB)
+Using cached astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Using cached flatbuffers-24.3.25-py2.py3-none-any.whl (26 kB)
+Downloading gast-0.4.0-py3-none-any.whl (9.8 kB)
+Using cached google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Downloading grpcio-1.68.1-cp38-cp38-win_amd64.whl (4.4 MB)
+   ---------------------------------------- 4.4/4.4 MB 18.8 MB/s eta 0:00:00
+Downloading h5py-3.11.0-cp38-cp38-win_amd64.whl (3.0 MB)
+   ---------------------------------------- 3.0/3.0 MB 17.3 MB/s eta 0:00:00
+Downloading keras-2.13.1-py3-none-any.whl (1.7 MB)
+   ---------------------------------------- 1.7/1.7 MB 15.5 MB/s eta 0:00:00
+Using cached libclang-18.1.1-py2.py3-none-win_amd64.whl (26.4 MB)
+Downloading numpy-1.24.3-cp38-cp38-win_amd64.whl (14.9 MB)
+   ---------------------------------------- 14.9/14.9 MB 16.8 MB/s eta 0:00:00
+Using cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+Downloading protobuf-4.25.5-cp38-cp38-win_amd64.whl (413 kB)
+   --------------------------------------- 413.4/413.4 kB 13.0 MB/s eta 0:00:00
+Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Downloading tensorboard-2.13.0-py3-none-any.whl (5.6 MB)
+   ---------------------------------------- 5.6/5.6 MB 17.8 MB/s eta 0:00:00
+Downloading tensorflow_estimator-2.13.0-py2.py3-none-any.whl (440 kB)
+   --------------------------------------- 440.8/440.8 kB 13.9 MB/s eta 0:00:00
+Downloading tensorflow_io_gcs_filesystem-0.31.0-cp38-cp38-win_amd64.whl (1.5 MB)
+   ---------------------------------------- 1.5/1.5 MB 18.9 MB/s eta 0:00:00
+Downloading termcolor-2.4.0-py3-none-any.whl (7.7 kB)
+Downloading typing_extensions-4.5.0-py3-none-any.whl (27 kB)
+Downloading wrapt-1.17.0-cp38-cp38-win_amd64.whl (38 kB)
+Downloading packaging-24.2-py3-none-any.whl (65 kB)
+   ---------------------------------------- 65.5/65.5 kB 3.5 MB/s eta 0:00:00
+Downloading google_auth-2.36.0-py2.py3-none-any.whl (209 kB)
+   --------------------------------------- 209.5/209.5 kB 13.3 MB/s eta 0:00:00
+Downloading google_auth_oauthlib-1.0.0-py2.py3-none-any.whl (18 kB)
+Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+   ---------------------------------------- 106.3/106.3 kB 6.0 MB/s eta 0:00:00
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+   ---------------------------------------- 64.9/64.9 kB ? eta 0:00:00
+Using cached tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Downloading werkzeug-3.0.6-py3-none-any.whl (227 kB)
+   --------------------------------------- 228.0/228.0 kB 13.6 MB/s eta 0:00:00
+Downloading cachetools-5.5.0-py3-none-any.whl (9.5 kB)
+Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+   --------------------------------------- 167.3/167.3 kB 10.5 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.0-cp38-cp38-win_amd64.whl (101 kB)
+   ---------------------------------------- 101.5/101.5 kB 5.7 MB/s eta 0:00:00
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+   ---------------------------------------- 70.4/70.4 kB 4.0 MB/s eta 0:00:00
+Downloading importlib_metadata-8.5.0-py3-none-any.whl (26 kB)
+Downloading MarkupSafe-2.1.5-cp38-cp38-win_amd64.whl (17 kB)
+Downloading pyasn1_modules-0.4.1-py3-none-any.whl (181 kB)
+   --------------------------------------- 181.5/181.5 kB 11.4 MB/s eta 0:00:00
+Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Downloading rsa-4.9-py3-none-any.whl (34 kB)
+Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+   ---------------------------------------- 126.3/126.3 kB 7.3 MB/s eta 0:00:00
+Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+   ---------------------------------------- 151.7/151.7 kB 9.4 MB/s eta 0:00:00
+Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+   ---------------------------------------- 83.1/83.1 kB 4.6 MB/s eta 0:00:00
+Downloading zipp-3.20.2-py3-none-any.whl (9.2 kB)
+Installing collected packages: libclang, flatbuffers, zipp, wrapt, urllib3, typing-extensions, termcolor, tensorflow-io-gcs-filesystem, tensorflow-estimator, tensorboard-data-server, six, pyasn1, protobuf, packaging, opt-einsum, oauthlib, numpy, MarkupSafe, keras, idna, grpcio, gast, charset-normalizer, certifi, cachetools, absl-py, werkzeug, rsa, requests, pyasn1-modules, importlib-metadata, h5py, google-pasta, astunparse, requests-oauthlib, markdown, google-auth, google-auth-oauthlib, tensorboard, tensorflow-intel, tensorflow
+Successfully installed MarkupSafe-2.1.5 absl-py-2.1.0 astunparse-1.6.3 cachetools-5.5.0 certifi-2024.8.30 charset-normalizer-3.4.0 flatbuffers-24.3.25 gast-0.4.0 google-auth-2.36.0 google-auth-oauthlib-1.0.0 google-pasta-0.2.0 grpcio-1.68.1 h5py-3.11.0 idna-3.10 importlib-metadata-8.5.0 keras-2.13.1 libclang-18.1.1 markdown-3.7 numpy-1.24.3 oauthlib-3.2.2 opt-einsum-3.4.0 packaging-24.2 protobuf-4.25.5 pyasn1-0.6.1 pyasn1-modules-0.4.1 requests-2.32.3 requests-oauthlib-2.0.0 rsa-4.9 six-1.16.0 tensorboard-2.13.0 tensorboard-data-server-0.7.2 tensorflow-2.13.0 tensorflow-estimator-2.13.0 tensorflow-intel-2.13.0 tensorflow-io-gcs-filesystem-0.31.0 termcolor-2.4.0 typing-extensions-4.5.0 urllib3-2.2.3 werkzeug-3.0.6 wrapt-1.17.0 zipp-3.20.2
+
+[notice] A new release of pip is available: 23.2.1 -> 24.3.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
