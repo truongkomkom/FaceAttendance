@@ -6,7 +6,8 @@ from deep_sort_realtime.deepsort_tracker import DeepSort
 
 import cv2
 import secrets
-
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 tracker = DeepSort(max_age=15, n_init=3, nms_max_overlap=1.0)
