@@ -1,4 +1,5 @@
-opencv-python
+opencv-contrib-python == 4.10.0.84
+cmake==4.0.0
 Flask
 pandas
 deepface==0.0.93
